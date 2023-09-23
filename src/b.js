@@ -20,17 +20,30 @@ const a = () => {
 
   document.body.appendChild(renderer.domElement);
 
-  // Create mesh
-  const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-  const material = new THREE.MeshStandardMaterial({ color: 0x999999 });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
+  // Create meshes
+  const geometry01 = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+  const material01 = new THREE.MeshStandardMaterial({ color: 0x999999 });
+  const obj01 = new THREE.Mesh(geometry01, material01);
+  obj01.position.x = -1;
+  scene.add(obj01);
+
+  const geometry02 = new THREE.ConeGeometry(0.4, 0.6, 6);
+  const material02 = new THREE.MeshStandardMaterial({ color: 0x999999 });
+  const obj02 = new THREE.Mesh(geometry02, material02);
+  scene.add(obj02);
+
+  const geometry03 = new THREE.IcosahedronGeometry(0.4, 0);
+  const material03 = new THREE.MeshStandardMaterial({ color: 0x999999 });
+  const obj03 = new THREE.Mesh(geometry03, material03);
+  obj03.position.x = +1;
+  scene.add(obj03);
 
   const render = (time) => {
-    time *= 0.001;
+    time *= 0.0005;
 
-    cube.rotation.x = time;
-    cube.rotation.y = time;
+    obj01.rotation.y = time;
+    obj02.rotation.y = time;
+    obj03.rotation.y = time;
 
     renderer.render(scene, camera);
 
