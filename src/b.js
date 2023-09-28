@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const a = () => {
+const b = () => {
   // Create a scene
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xf5f5fa);
@@ -60,4 +60,4 @@ const a = () => {
   window.addEventListener('resize', onWindowResize);
 };
 
-export default a;
+export default b;
