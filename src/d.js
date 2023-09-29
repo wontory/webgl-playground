@@ -76,7 +76,7 @@ const d = () => {
     displacementMap: textureHeightMap,
     displacementScale: 0.03,
     roughnessMap: textureRoughnessMap,
-    ropughness: 0.8,
+    roughness: 0.8,
   });
   const obj04 = new THREE.Mesh(geometry, material04);
   obj04.position.x = 1.5;
