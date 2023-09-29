@@ -33,12 +33,16 @@ const d = () => {
   // Add textures
   const textureLoader = new THREE.TextureLoader();
   const textureBaseColor = textureLoader.load(
-    '/img/Stone_Path_008_basecolor.jpg'
+    '../img/Stone_Path_008_basecolor.jpg'
   );
-  const textureNormalMap = textureLoader.load('/img/Stone_Path_008_normal.jpg');
-  const textureHeightMap = textureLoader.load('/img/Stone_Path_008_height.png');
+  const textureNormalMap = textureLoader.load(
+    '../img/Stone_Path_008_normal.jpg'
+  );
+  const textureHeightMap = textureLoader.load(
+    '../img/Stone_Path_008_height.png'
+  );
   const textureRoughnessMap = textureLoader.load(
-    '/img/Stone_Path_008_roughness.jpg'
+    '../img/Stone_Path_008_roughness.jpg'
   );
 
   // Create meshes
