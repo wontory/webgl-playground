@@ -4,6 +4,7 @@ import c from './src/c.js';
 import d from './src/d.js';
 import e from './src/e.js';
 import f from './src/f.js';
+import g from './src/g.js';
 import './main.css';
 
 // a();
@@ -11,4 +12,5 @@ import './main.css';
 // c();
 // d();
 // e();
-f();
+// f();
+g();
