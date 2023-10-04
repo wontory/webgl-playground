@@ -33,7 +33,7 @@ const i = () => {
   const geometry = new THREE.TorusGeometry(0.7, 0.3, 12, 80);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
   const obj = new THREE.Mesh(geometry, material);
-  obj.rotation.y = 0.8;
+  obj.position.y = 0.8;
   scene.add(obj);
 
   // Create plane
