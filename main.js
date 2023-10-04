@@ -6,6 +6,7 @@ import e from './src/e.js';
 import f from './src/f.js';
 import g from './src/g.js';
 import h from './src/h.js';
+import i from './src/i.js';
 import './main.css';
 
 // a();
@@ -15,4 +16,5 @@ import './main.css';
 // e();
 // f();
 // g();
-h();
+// h();
+i();
