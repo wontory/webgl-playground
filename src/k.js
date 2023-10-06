@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 
-import { gsap } from 'gsap';
+import { gsap } from 'gsap/gsap-core';
 
 const k = () => {
   // Create a scene
@@ -37,11 +37,11 @@ const k = () => {
   rectLight.lookAt(0, 0, 0);
   scene.add(rectLight);
 
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
   directionalLight.position.set(1, 1, 1);
   scene.add(directionalLight);
 
-  const directionalLight2 = new THREE.DirectionalLight(0xffffff, 2);
+  const directionalLight2 = new THREE.DirectionalLight(0xffffff, 5);
   directionalLight2.position.set(0.5, 2, 1);
   scene.add(directionalLight2);
 
@@ -74,6 +74,49 @@ const k = () => {
     );
   });
 
+  // Create raycaster
+  const raycaster = new THREE.Raycaster();
+
+  const onMouseMove = (event) => {
+    const mouse = {
+      x: (event.clientX / renderer.domElement.clientWidth) * 2 - 1,
+      y: -(event.clientY / renderer.domElement.clientHeight) * 2 + 1,
+    };
+
+    // console.log(mouse.x, mouse.y);
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(scene.children, true);
+
+    if (intersects.length > 0) {
+      gsap.to(ObjGroup.scale, {
+        x: 1.5,
+        y: 1.5,
+        z: 1.5,
+        duration: 1,
+      });
+
+      gsap.to(ObjGroup.rotation, {
+        y: Math.PI - 2.2,
+        duration: 1,
+      });
+    } else {
+      gsap.to(ObjGroup.scale, {
+        x: 1,
+        y: 1,
+        z: 1,
+        duration: 1,
+      });
+
+      gsap.to(ObjGroup.rotation, {
+        y: -2.2,
+        duration: 1,
+      });
+    }
+  };
+
+  renderer.domElement.addEventListener('mousemove', onMouseMove);
+
+  // Create animation
   const animate = () => {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
