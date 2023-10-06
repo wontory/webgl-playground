@@ -8,6 +8,7 @@ import g from './src/g.js';
 import h from './src/h.js';
 import i from './src/i.js';
 import j from './src/j.js';
+import k from './src/k.js';
 import './main.css';
 
 // a();
@@ -19,4 +20,5 @@ import './main.css';
 // g();
 // h();
 // i();
-j();
+// j();
+k();
