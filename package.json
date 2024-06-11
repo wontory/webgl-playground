@@ -10,7 +10,7 @@
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
-    "vite": "^4.4.5"
+    "vite": "^4.5.3"
   },
   "dependencies": {
     "gsap": "^3.12.2",
